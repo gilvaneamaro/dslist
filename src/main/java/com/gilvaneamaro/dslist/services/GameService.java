@@ -4,6 +4,7 @@ import java.util.List;
 import com.gilvaneamaro.dslist.dto.GameDTO;
 import com.gilvaneamaro.dslist.dto.GameMinDTO;
 import com.gilvaneamaro.dslist.entities.Game;
+import com.gilvaneamaro.dslist.projections.GameMinProjection;
 import com.gilvaneamaro.dslist.repositories.GameRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,14 @@ public class GameService {
 		Game result = gameRepository.findById(id).get(); //Da pra fazer um tratamento de exceção nessa parte
 		GameDTO dto = new GameDTO(result);
 		
+		return dto;
+	}
+	
+	@Transactional(readOnly = true)
+	public List<GameMinDTO> findByList(Long listID){
+		List <GameMinProjection> result = gameRepository.searchByList(listID);
+		List <GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
+				
 		return dto;
 	}
 }
