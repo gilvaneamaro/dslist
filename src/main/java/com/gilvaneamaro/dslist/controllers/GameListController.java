@@ -17,7 +17,8 @@ import com.gilvaneamaro.dslist.services.GameService;
 
 @RestController
 @RequestMapping(value = "/lists")
-public class GameListController {
+public class GameListController 
+{
 	
 	@Autowired
 	private GameListService gameListService;
@@ -26,20 +27,23 @@ public class GameListController {
 	private GameService gameService;
 	
 	@GetMapping
-	public List<GameListDTO> findAll(){
+	public List<GameListDTO> findAll()
+	{
 		List<GameListDTO> result = gameListService.findAll();
 		
 		return result;
 	}
 	
 	@GetMapping(value= "/{listId}/games")
-	public List<GameMinDTO> findByList(@PathVariable Long listId){
+	public List<GameMinDTO> findByList(@PathVariable Long listId)
+	{
 		List<GameMinDTO> result = gameService.findByList(listId);
 		return result;
 	}
 	
 	@PostMapping(value= "/{listId}/replacement")
-	public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body){
+	public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body)
+	{
 		gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
 	}
 }

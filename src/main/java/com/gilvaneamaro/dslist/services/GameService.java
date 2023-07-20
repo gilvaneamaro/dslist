@@ -12,13 +12,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class GameService {
+public class GameService 
+{
 	
 	@Autowired
 	private GameRepository gameRepository;
 	
 	@Transactional(readOnly = true)
-	public List<GameMinDTO> findAll(){
+	public List<GameMinDTO> findAll()
+	{
 		List <Game> result = gameRepository.findAll();
 		List <GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
 				
@@ -26,7 +28,8 @@ public class GameService {
 	}
 	
 	@Transactional(readOnly = true)
-	public GameDTO findById(Long id){
+	public GameDTO findById(Long id)
+	{
 		Game result = gameRepository.findById(id).get(); //Da pra fazer um tratamento de exceção nessa parte
 		GameDTO dto = new GameDTO(result);
 		
@@ -34,7 +37,8 @@ public class GameService {
 	}
 	
 	@Transactional(readOnly = true)
-	public List<GameMinDTO> findByList(Long listID){
+	public List<GameMinDTO> findByList(Long listID)
+	{
 		List <GameMinProjection> result = gameRepository.searchByList(listID);
 		List <GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
 				
