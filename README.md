@@ -64,9 +64,10 @@ Pré-requisitos: Docker
 - Faça o download do arquivo [docker-compose.yml](https://github.com/gilvaneamaro/dslist/blob/main/assets/docker-compose.yml "docker compose")
 - Abra Powershell em modo administrador
 - Localize a pasta do arquivo e digite
-  ´´´bash
-   docker compose -f docker-compose.yml -f docker-compose.admin.yml run backup_db
-  ´´´
+```bash
+ docker compose -f docker-compose.yml -f
+ docker-compose.admin.yml run backup_db
+```
 - Acesse http://localhost:5050/browser/
 login: me@example.com
 senha: 1234567
