@@ -1,4 +1,4 @@
-# Big Game Survey 
+# DSList
 [![NPM](https://img.shields.io/npm/l/react)]([https://github.com/gilvaneamaro/dslist/blob/main/LICENSE) 
 
 # Sobre o projeto
