@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-DSlist é uma aplicação backend web (API Rest) construída durante uma edição da **Semana DevSuperior**, evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+DSlist é uma aplicação backend web (API Rest) construída durante uma edição da **Semana DevSuperior**, evento organizado pela [DevSuperior](https://devsuperior.com.br "Site da DevSuperior").
 
 O código segue o Design Patterns -  Camadas DTO, tendo a camada Service, Controller e DTO, aplica a regra de negócio por trás de um site que organiza uma lista de jogos e suas características, responde a requisições para exibir essa lista de formas diferentes e também reordenar os jogos.
 
